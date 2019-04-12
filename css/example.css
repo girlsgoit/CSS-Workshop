@@ -1,30 +1,30 @@
-/* ==========================================================================
-	HEADER
-========================================================================== */
+/* 
+* === <header> Styles ===
+*/
 
 .header {
 	padding: 25px 0;
 	max-width: 960px;
 	margin: 0 auto;
 	text-align: center;
-	/* display: flex; */
-	/* align-items: center; */
-	/* justify-content: space-between; */
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
 
-.logo {
-	line-height: 0;
-	font-size: 0;
-	display: inline-block;
-	margin-bottom: 15px;
-}
 
+/* <a class="logo" href="index.html"> */
 .logo img {
 	height: 40px;
+	display: block;
+}
+
+/* <nav class="nav"> */
+.nav ul {
+	display: flex;
 }
 
 .nav li {
-	display: inline-block;
 	text-transform: uppercase;
 	margin-left: 30px;
 }
@@ -33,16 +33,17 @@
 	text-decoration: none;
 	font-size: 15px;
 	color: #5f5f5f;
-	/* transition: color 0.3s ease; */
+	transition: color 0.3s ease;
 }
 
-/* .nav a:hover {
+.nav a:hover {
 	color: #000;
-} */
+}
 
-/* ==========================================================================
-	HERO HEADR
-========================================================================== */
+
+/* 
+* === Hero <section> Styles ===
+*/
 
 .hero {
 	position: relative;
@@ -50,10 +51,11 @@
 	overflow: hidden;
 	display: flex;
 	align-items: center;
+	padding: 80px;
 }
 
-.hero__overlay {
-	content: '';
+/* <section> > <div class="hero-overlay"> */
+.hero-overlay {
 	height: 100%;
 	width: 100%;
 	background-color: rgb(12, 12, 12);
@@ -66,8 +68,12 @@
 
 .hero img {
 	position: absolute;
-	/* top: -10%; */
 	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+	object-position: top center;
 }
 
 .hero h1 {
@@ -83,12 +89,11 @@
 	display: block;
 	font-weight: 400;
 	font-style: italic;
-	
 }
 
-/* ==========================================================================
-	ABOUT
-========================================================================== */
+/* 
+* === About <section> Styles ===
+*/
 
 .about {
 	padding: 80px;
@@ -102,20 +107,21 @@
 
 .about p {
 	text-align: center;
-	width: 740px;
+	max-width: 740px;
 	margin: 0 auto 32px auto;
 	font-weight: 300;
 }
 
-/* ==========================================================================
-   STATS
-   ========================================================================== */
+/* 
+* === Stats <section> Styles ===
+*/
 
 .stats {
 	background-image: url('../img/bg-pattern.jpg');
 	background-size: cover;
 	color: white;
 	text-align: center;
+	padding: 0 80px;
 }
 
 .stats ul {
@@ -125,8 +131,7 @@
 	display: flex;
 }
 
-.stats ul li {
-	width: 25%;
+.stats li {
 	max-width: 25%;
 	flex: 0 0 25%;
 }
@@ -144,16 +149,116 @@
 	font-size: 15px;
 }
 
-/* ==========================================================================
-   QUOTE
-   ========================================================================== */
+/* 
+* === Portfolio <section> Styles ===
+*/
+
+.portfolio {
+	padding: 80px;
+}
+
+.portfolio h2 {
+	font-size: 40px;
+	text-align: center;
+	margin: 0 0 24px 0;
+}
+
+.portfolio p {
+	text-align: center;
+	max-width: 740px;
+	margin: 0 auto 64px auto;
+	font-weight: 300;
+}
+
+.portfolio ul {
+	max-width: 960px;
+	margin: 0 auto;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.portfolio li {
+	position: relative;
+	flex: 0 0 33.33%;
+	max-width: 33.33%;
+}
+
+.portfolio li:before {
+	display: block;
+	content: '';
+	padding-top: 100%;
+}
+
+.portfolio img {
+	object-fit: cover;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+
+.portfolio a {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,.85);
+	z-index: 5;
+	opacity: 0;
+	transition: opacity 0.3s ease;
+	color: white;
+	text-decoration: none;
+	text-align: center;
+	display: flex;
+	align-items: center;
+}
+
+.portfolio li:hover a {
+	opacity: 1;
+}
+
+.portfolio li div {
+	width: 100%;
+}
+
+.portfolio li h3 {
+	color: white;
+	font-size: 24px;
+	letter-spacing: 1.2px;
+	opacity: 0;
+	transition: transform 0.5s ease, opacity 0.5s ease;
+	transform: translateY(20px);
+	margin: 0 0 16px 0;
+}
+
+.portfolio li p {
+	text-transform: uppercase;
+	font-size: 14.4px;
+	opacity: 0;
+	transition: transform 0.5s ease, opacity 0.5s ease;
+	transition-delay: 0.2s;
+	transform: translateY(10px);
+	margin: 0;
+}
+
+.portfolio li:hover h3,
+.portfolio li:hover p {
+	transform: translateY(0);
+	opacity: 1;
+}
+
+/* 
+* === Quote <section> Styles ===
+*/
 
 .quote {
 	background-image: url('../img/bg-pattern.jpg');
 	background-size: cover;
 	color: white;
 	text-align: center;
-	padding: 96px 0;
+	padding: 80px;
 }
 
 .quote blockquote {
@@ -172,12 +277,12 @@
 	font-size: 15px;
 }
 
-/* ==========================================================================
-   CLIENTS
-   ========================================================================== */
+/* 
+* === Clients <section> Styles ===
+*/
 
 .clients {
-	padding: 64px 0;
+	padding: 80px;
 }
 
 .clients ul {
@@ -188,21 +293,21 @@
 
 .clients li {
 	text-align: center;
-	width: 20%;
 	flex: 0 0 20%;
+	max-width: 20%;
 }
 
 .clients img {
 	height: 120px;
 }
 
-/* ==========================================================================
-   FOOTER
-   ========================================================================== */
+/* 
+* === Footer Styles ===
+*/
 
 footer {
 	text-align: center;
-	padding: 64px 0;
+	padding: 80px;
 	background-color: #ebebeb;
 	font-weight: 300;
 	font-size: 15px;
